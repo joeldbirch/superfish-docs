@@ -12,7 +12,7 @@ import { StaticQuery, graphql } from "gatsby"
 import {FaGithub, FaTwitter} from "react-icons/fa"
 import Header from "./header"
 import Hero from "./hero"
-// import "./site.css"
+import "./site.css"
 
 const Layout = ({ children }) => (
   <StaticQuery
