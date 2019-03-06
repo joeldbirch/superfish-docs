@@ -8,6 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { Location } from '@reach/router'
+import classNames from 'classnames'
 
 import {FaGithub, FaTwitter} from "react-icons/fa"
 import Header from "./header"
@@ -27,10 +29,18 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <header className="hero  is-info  is-medium is-bold">
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <Hero />
-        </header>
+        <Location>
+          {({ location }) => (
+            <header className={classNames({
+              'hero is-info is-bold': true,
+              'is-medium': location.pathname === '/',
+            }) }>
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <Hero compact={location.pathname !== '/'} />
+            </header>
+          )}
+
+        </Location>
 
         <div className="main">
           <div className="container">
