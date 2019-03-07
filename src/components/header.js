@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import TheMenu from "./the-menu"
 import { FaSuperpowers } from "react-icons/fa"
 import classNames from 'classnames'
@@ -31,13 +32,13 @@ class Header extends React.Component {
           <div className="container  container--wide">
             <div className="nav-left">
               <h1 className="nav-item">
-                <a className="sitelogo" href="/">
+                <Link className="sitelogo" to="/" activeClassName="is-active">
                   <span className="icon" style={{
                     verticalAlign: 'middle',
                     marginRight: '.2em',
                     fontSize: '24px',
                   }} ><FaSuperpowers /></span><strong>Superfish</strong>
-                </a>
+                </Link>
               </h1>
             </div>
             <span id="NavToggle" className="nav-toggle" onClick={this.handleClick}>
