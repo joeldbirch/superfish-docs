@@ -41,7 +41,7 @@ class Header extends React.Component {
                 </Link>
               </h1>
             </div>
-            <span id="NavToggle" className="nav-toggle" onClick={this.handleClick}>
+            <span id="NavToggle" className="nav-toggle" onClick={this.handleClick} aria-label="Toggle Menu">
               <span></span>
               <span></span>
               <span></span>

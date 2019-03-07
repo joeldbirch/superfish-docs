@@ -1,4 +1,5 @@
 import React from "react"
+import PrismCode from 'react-prism'
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -18,11 +19,11 @@ const IndexPage = () => (
 			<p>The <a href="https://github.com/joeldbirch/superfish/" className="external">canonical version of Superfish lives on GitHub</a>. There you can browse the files, clone, fork and star the project, submit issues if you find them, and so on.</p>
 
 			<h2>Install via Bower package manager:</h2>
-			<p>If you have the <a href="https://bower.io" className="external"> Bower package manager</a> installed, you can install Superfish into your project from the command line by running: <code className="language-markup">bower install superfish</code></p>
+			<p>If you have the <a href="https://bower.io" className="external"> Bower package manager</a> installed, you can install Superfish into your project from the command line by running: <PrismCode className="language-markup">bower install superfish</PrismCode></p>
 			<p>If you install Superfish using this method only the files you really need are installed without the various project maintenance litter (package.json, etc).</p>
 
 			<h2>Install via Node Package Manager (NPM):</h2>
-			<p>If you prefer to use NPM, install via <code className="language-markup">npm install superfish</code></p>
+			<p>If you prefer to use NPM, install via <PrismCode className="language-markup">npm install superfish</PrismCode></p>
 		</section>
 		<section id="support" className="section  content">
 			<h1>Support</h1>

@@ -32,10 +32,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `superfish`,
+        short_name: `Superfish`,
         start_url: `/`,
-        background_color: `#3273dc`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `src/images/superfish-icon.png`, // This path is relative to the root of the site.
       },
