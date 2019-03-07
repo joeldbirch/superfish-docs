@@ -2,19 +2,19 @@ import React from "react"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import BasicMenuExample from "../../components/basic-menu-example"
+import SupersubsMenuExample from "../../components/supersubs-menu-example"
 import GeneralSupport from "../../components/general-support"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Menu Examples" description="Superfish menu examples." keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `Examples`]} />
+    <SEO title="Supersubs Menu Example" description="Superfish menu example with Supersubs to control submenu width." keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `Example`, `Supersubs`]} />
 
     <div id="examples"  className="section">
-			<h1 className="title">Example / Basic</h1>
+			<h1 className="title">Example / Supersubs</h1>
 
 			<div id="samples" className="samples">
-			  <div id="sample1">
-          <BasicMenuExample />
+			  <div id="sample5">
+          <SupersubsMenuExample />
 				</div>
 			</div>
 

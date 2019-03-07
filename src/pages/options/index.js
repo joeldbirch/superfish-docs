@@ -1,4 +1,5 @@
 import React from "react"
+import PrismCode from 'react-prism'
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -11,7 +12,8 @@ const IndexPage = () => (
     <div id="options" className="section  content">
 			<h1>Options</h1>
 			<p>Superfish&#8217;s default options:</p>
-			<pre><code className="language-javascript">{`$.fn.superfish.defaults = {
+			<pre><PrismCode className="language-javascript">{
+`$.fn.superfish.defaults = {
   popUpSelector: 'ul,.sf-mega',      // selector within menu context to define the submenu element to be revealed
   hoverClass:    'sfHover',          // the class applied to hovered list items
   pathClass:     'overideThisToUse', // the class you have applied to list items that lead to the current page
@@ -31,19 +33,19 @@ const IndexPage = () => (
   onIdle:        $.noop,             // callback function fires when the 'current' submenu is restored (if using pathClass functionality)
   onDestroy:     $.noop              // callback function fires after the 'destroy' method is called on the menu container
   onHandleTouch: $.noop              // callback function. Use this to handle touch events if the default behaviour is getting in your way
-};`}</code></pre>
+};`
+      }</PrismCode></pre>
 			<p>You can override any of these options by passing an object into the Superfish method upon initialisation. For example:</p>
-			<pre><code className="language-markup">{`//link to the CSS files for this menu type`}
-&lt;link rel="stylesheet" media="screen" href="superfish.css"&gt;
+			<pre><PrismCode className="language-markup">{
+`//link to the CSS files for this menu type
+<link rel="stylesheet" media="screen" href="superfish.css">
 
-{`// link to the JavaScript files (hoverIntent is optional)
-// if you use hoverIntent, use the updated r7 version (see FAQ)`}
-&lt;script src="hoverIntent.js"&gt;&lt;/script&gt;
-&lt;script src="superfish.js"&gt;&lt;/script&gt;
+// link to the JavaScript files (hoverIntent is optional)
+<script src="hoverIntent.js"></script>
+<script src="superfish.js"></script>
 
-{`// initialise Superfish`}
-&lt;script&gt;{`
-
+// initialise Superfish
+<script>
 	jQuery(document).ready(function() {
 		jQuery('ul.sf-menu').superfish({
 			delay:       1000,                            // one second delay on mouseout
@@ -52,8 +54,8 @@ const IndexPage = () => (
 			autoArrows:  false                            // disable generation of arrow mark-up
 		});
 	});
-
-`}&lt;/script&gt;</code></pre>
+</script>`
+    }</PrismCode></pre>
     <GeneralSupport />
     </div>
 

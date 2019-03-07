@@ -6,7 +6,7 @@ import GeneralSupport from "../../components/general-support"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Options" keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `Options`]} />
+    <SEO title="FAQ" keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `FAQ`]} />
 
     <div id="faq" className="section  content">
 			<h1>Frequently Asked Questions</h1>

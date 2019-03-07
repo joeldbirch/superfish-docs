@@ -1,58 +1,69 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import TheMenu from "./the-menu"
 import { FaSuperpowers } from "react-icons/fa"
+import classNames from 'classnames'
 
+class Header extends React.Component {
 
-const Header = ({ siteTitle }) => (
+  constructor(props) {
+    super(props)
+    this.state = {isMenuOpen: false}
 
-    <div className="hero-head">
-      <nav className="nav">
-        <div className="container  container--wide">
-          <div className="nav-left">
-            <h1 className="nav-item">
-              <a className="sitelogo  is-active" href="/">
-                <span className="icon" style={{
-                  verticalAlign: 'middle',
-                  marginRight: '.2em',
-                  fontSize: '24px',
-                }} ><FaSuperpowers /></span><strong>Superfish</strong>
-              </a>
-            </h1>
-          </div>
-          <span id="NavToggle" className="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <div id="NavItems" className="nav-right  nav-menu">
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-            <Link to="/" className="nav-item" activeClassName="is-active">Get Started</Link>
-            <Link to="/options/" className="nav-item" activeClassName="is-active">Options</Link>
-            <Link to="/examples/" className="nav-item" activeClassName="is-active">Examples</Link>
-            <Link to="/faq/" className="nav-item" activeClassName="is-active">FAQ</Link>
-            <Link to="/download/" className="nav-item" activeClassName="is-active">Support</Link>
+  handleClick() {
+    this.setState(state => ({
+      isMenuOpen: !state.isMenuOpen,
+    }))
+    console.log('click');
 
-            <span className="nav-item  nav-item--paypal">
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" className="paypalbutton">
-                <input type="hidden" name="cmd" value="_s-xclick" />
-                <input type="hidden" name="hosted_button_id" value="2006952" />
-                <input title="Support Superfish development!" type="image" src="https://www.paypal.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Donate" />
-              </form>
+  }
+
+  render() {
+    const menuClass = classNames({
+      'nav-right nav-menu': true,
+      'is-open': this.state.isMenuOpen,
+    })
+
+    return (
+      <div className="hero-head">
+        <nav className="nav">
+          <div className="container  container--wide">
+            <div className="nav-left">
+              <h1 className="nav-item">
+                <a className="sitelogo" href="/">
+                  <span className="icon" style={{
+                    verticalAlign: 'middle',
+                    marginRight: '.2em',
+                    fontSize: '24px',
+                  }} ><FaSuperpowers /></span><strong>Superfish</strong>
+                </a>
+              </h1>
+            </div>
+            <span id="NavToggle" className="nav-toggle" onClick={this.handleClick}>
+              <span></span>
+              <span></span>
+              <span></span>
             </span>
+            <div id="NavItems" className={menuClass} onClick={this.handleClick}>
+
+              <TheMenu />
+
+              <span className="nav-item  nav-item--paypal">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" className="paypalbutton">
+                  <input type="hidden" name="cmd" value="_s-xclick" />
+                  <input type="hidden" name="hosted_button_id" value="2006952" />
+                  <input title="Support Superfish development!" type="image" src="https://www.paypal.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Donate" />
+                </form>
+              </span>
+            </div>
           </div>
-        </div>
-      </nav>
-    </div>
-
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+        </nav>
+      </div>
+    )
+  }
 }
 
 export default Header

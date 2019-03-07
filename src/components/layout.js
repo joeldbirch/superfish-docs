@@ -12,8 +12,12 @@ import { Location } from '@reach/router'
 import classNames from 'classnames'
 
 import {FaGithub, FaTwitter} from "react-icons/fa"
+import ExamplesNav from './examples-nav'
 import Header from "./header"
 import Hero from "./hero"
+
+import 'prismjs'
+
 import "./site.css"
 
 const Layout = ({ children }) => (
@@ -35,8 +39,9 @@ const Layout = ({ children }) => (
               'hero is-info is-bold': true,
               'is-medium': location.pathname === '/',
             }) }>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <Hero compact={location.pathname !== '/'} />
+              <Header />
+              <Hero compact={location.pathname !== '/'} />
+              { location.pathname.includes('examples') ? <ExamplesNav /> : ''}
             </header>
           )}
 
@@ -57,7 +62,7 @@ const Layout = ({ children }) => (
                 width: 149,
                 height: 149,
                 zIndex: 1,
-              }} src="/static/images/right-red@2x.png" alt="Fork me on GitHub"
+              }} src="/images/right-red@2x.png" alt="Fork me on GitHub"
             />
 		      </a>
 	      </div>
@@ -65,13 +70,13 @@ const Layout = ({ children }) => (
         <footer className="footer" role="contentinfo">
           <div className="container">
             <div className="content  has-text-centered  is-small">
-              <p>Created for you by Joel Birch <a className="icon" href="https://github.com/joeldbirch" title="I build things">
-                <FaGithub />
+              <p style={{ marginBottom: '1rem' }}>Created for you by Joel Birch <a className="icon" href="https://github.com/joeldbirch" title="I build things">
+                <FaGithub style={{ fontSize: '1rem' }} />
                 </a><a className="icon" href="https://www.twitter.com/joel_birch/" title="I'm on the Twitter machine">
-                  <FaTwitter />
+                  <FaTwitter style={{ fontSize: '1rem' }} />
                 </a> xox
               </p>
-              <p><a href="http://jquery.com/"><img src="/static/images/jQuery-alpha-trans.png" alt="jQuery" /></a></p>
+              <p><a href="http://jquery.com/"><img src="/images/jQuery-alpha-trans.png" alt="jQuery" width="66" /></a></p>
             </div>
           </div>
         </footer>

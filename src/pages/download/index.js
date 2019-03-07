@@ -2,16 +2,17 @@ import React from "react"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import { FaDownload } from "react-icons/fa"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Options" keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `Options`]} />
+    <SEO title="Download and Support" keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `Download`, `Support`]} />
 
     <section id="download" className="section  content">
 			<h1>Download</h1>
 
 			<h2>Download the Zip archive:</h2>
-			<p>You can <strong><a href="https://github.com/joeldbirch/superfish/archive/master.zip">download a zip archive</a></strong> of everything you need.</p>
+			<p>You can <strong><a href="https://github.com/joeldbirch/superfish/archive/master.zip"><FaDownload style={{ marginRight: '.25em' }} />download a zip archive</a></strong> of everything you need.</p>
 
 			<h2>Download from GitHub:</h2>
 			<p>The <a href="https://github.com/joeldbirch/superfish/" className="external">canonical version of Superfish lives on GitHub</a>. There you can browse the files, clone, fork and star the project, submit issues if you find them, and so on.</p>

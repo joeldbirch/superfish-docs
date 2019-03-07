@@ -10,16 +10,16 @@ const Hero = ({ compact }) => (
       { !compact ?
         <>
           <h1 className="title">
-            <span className="icon  logoicon  is-medium"><FaSuperpowers /></span><strong>Superfish</strong> v1.7.10
+            <span className="icon  logoicon  is-medium"><FaSuperpowers /></span><strong>Superfish</strong> <span style={{ fontSize:'.9rem' }}>v1.7.10</span>
           </h1>
-          <h2 className="subtitle  is-5">jQuery menu plugin by Joel&nbsp;Birch.</h2>
+          <h2 className="subtitle  is-5" style={{ color:'#a8d8ff',fontSize:'.9rem' }}>The jQuery menu plugin by Joel&nbsp;Birch</h2>
         </>
         :
         ''
       }
 
       <p className="hero__detail">
-        <code className="hero__code">npm install superfish</code>&nbsp; <span className="nobreak"><span className="hero__label">or</span>&nbsp; <Link to="/download/" className="hero__button  button  is-info  is-inverted  is-small  qa-download">
+        <code className="hero__code">npm install superfish -s</code>&nbsp; <span className="nobreak"><span className="hero__label">or</span>&nbsp; <Link to="/download/" className="hero__button  button  is-info  is-inverted  is-small  qa-download">
           <span className="icon is-small">
             <FaDownload />
           </span>

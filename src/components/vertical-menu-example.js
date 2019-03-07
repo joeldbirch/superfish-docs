@@ -5,17 +5,20 @@ import React from "react"
 import "../helpers/legacy"
 import PrismCode from "react-prism"
 
-export default class BasicMenuExample extends React.Component {
+export default class VerticalMenuExample extends React.Component {
   componentDidMount() {
     // jQuery was added to window in "../helpers/legacy"
-    window.jQuery('#sample-menu-1').superfish()
+    window.jQuery('#sample-menu-3').superfish({
+      animation: {height:'show'},
+      delay: 1200,
+    })
   }
 
   render() {
     return (
       <>
         <h2 className="subtitle  is-4">The result:</h2>
-        <ul id="sample-menu-1" className="sf-menu">
+        <ul id="sample-menu-3" className="sf-menu sf-vertical">
           <li className="current">
             <a href="#a">menu item</a>
             <ul>
@@ -120,12 +123,13 @@ export default class BasicMenuExample extends React.Component {
         <br style={{ clear: 'left' }} />
         <div className="content">
           <h2>The code:</h2>
-          <p>The simplest use, and a good starting point for new users:</p>
+          <p>To create an all-vertical menu, simply add the class <PrismCode>sf-vertical</PrismCode> to the parent ul along with the usual <PrismCode>sf-menu</PrismCode> class (space-separated, eg. className="sf-menu sf-vertical"), and initialise as normal. For this example I will also demonstrate altering some of the options in order to create a slide-down animation and a longer delay on mouseout:</p>
         </div>
         <pre>
           <PrismCode className="language-markup">
 {`<!-- link to the CSS files for this menu type -->
 <link rel="stylesheet" media="screen" href="superfish.css">
+<link rel="stylesheet" media="screen" href="superfish-vertical.css">
 
 <!-- link to the JavaScript files (hoverIntent is optional) -->
 <script src="hoverIntent.js"></script>
@@ -133,9 +137,12 @@ export default class BasicMenuExample extends React.Component {
 
 <!-- initialise Superfish -->
 <script>
-  jQuery(document).ready(function(){
-    jQuery('ul.sf-menu').superfish();
-  });
+	jQuery(document).ready(function(){
+		jQuery('ul.sf-menu').superfish({
+			animation: {height:'show'},	// slide-down effect without fade-in
+			delay:		 1200			// 1.2 second delay on mouseout
+		});
+	});
 </script>`}
           </PrismCode>
         </pre>
