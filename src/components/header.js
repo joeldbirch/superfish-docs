@@ -36,7 +36,7 @@ class Header extends React.Component {
                   <span className="icon" style={{
                     verticalAlign: 'middle',
                     marginRight: '.2em',
-                    fontSize: '24px',
+                    fontSize: '23px',
                   }} ><FaSuperpowers /></span><strong>Superfish</strong>
                 </Link>
               </h1>

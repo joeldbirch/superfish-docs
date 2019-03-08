@@ -19,6 +19,7 @@ import Hero from "./hero"
 import 'prismjs'
 
 import "./site.css"
+import "../../node_modules/prismjs/themes/prism-coy.css"
 
 const Layout = ({ children }) => (
   <StaticQuery

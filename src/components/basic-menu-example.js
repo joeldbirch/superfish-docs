@@ -5,6 +5,9 @@ import React from "react"
 import "../helpers/legacy"
 import PrismCode from "react-prism"
 
+import "../../node_modules/superfish/src/css/superfish.css"
+
+
 export default class BasicMenuExample extends React.Component {
   componentDidMount() {
     // jQuery was added to window in "../helpers/legacy"

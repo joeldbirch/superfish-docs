@@ -1,0 +1,5 @@
+# Redirect domain aliases to primary domain
+https://superfish.joelbirch.co/* https://superfish.joelbirch.design/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://superfish.netlify.com/* https://superfish.joelbirch.design/:splat 301!
