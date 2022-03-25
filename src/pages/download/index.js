@@ -1,13 +1,13 @@
-import React from "react"
-import PrismCode from "react-prism"
+import React from 'react'
+import PrismCode from 'react-prism'
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import { FaDownload } from "react-icons/fa"
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
+import { FaDownload } from 'react-icons/fa'
 
 const IndexPage = () => (
   <Layout>
-    <SEO
+    <Seo
       title="Download and Support"
       keywords={[
         `jQuery`,
@@ -24,19 +24,19 @@ const IndexPage = () => (
 
       <h2>Download the Zip archive:</h2>
       <p>
-        You can{" "}
+        You can{' '}
         <strong>
           <a href="https://github.com/joeldbirch/superfish/archive/master.zip">
-            <FaDownload style={{ marginRight: ".25em" }} />
+            <FaDownload style={{ marginRight: '.25em' }} />
             download a zip archive
           </a>
-        </strong>{" "}
+        </strong>{' '}
         of everything you need.
       </p>
 
       <h2>Download from GitHub:</h2>
       <p>
-        The{" "}
+        The{' '}
         <a href="https://github.com/joeldbirch/superfish/" className="external">
           canonical version of Superfish lives on GitHub
         </a>
@@ -46,13 +46,13 @@ const IndexPage = () => (
 
       <h2>Install via Bower package manager:</h2>
       <p>
-        If you have the{" "}
+        If you have the{' '}
         <a href="https://bower.io" className="external">
-          {" "}
+          {' '}
           Bower package manager
-        </a>{" "}
+        </a>{' '}
         installed, you can install Superfish into your project from the command
-        line by running:{" "}
+        line by running:{' '}
         <PrismCode className="language-markup">
           bower install superfish
         </PrismCode>
@@ -65,7 +65,7 @@ const IndexPage = () => (
 
       <h2>Install via Node Package Manager (NPM):</h2>
       <p>
-        If you prefer to use NPM, install via{" "}
+        If you prefer to use NPM, install via{' '}
         <PrismCode className="language-markup">npm install superfish</PrismCode>
       </p>
     </section>
@@ -83,7 +83,7 @@ const IndexPage = () => (
       </p>
       <p>
         Demonstrable bugs with the JavaScript component of the Superfish plugin
-        can be{" "}
+        can be{' '}
         <a
           className="external"
           href="https://github.com/joeldbirch/superfish/issues/"

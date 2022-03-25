@@ -1,19 +1,22 @@
-import React from "react"
+import React from 'react'
 import PrismCode from 'react-prism'
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import GeneralSupport from "../../components/general-support"
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
+import GeneralSupport from '../../components/general-support'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Options" keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `Options`]} />
+    <Seo
+      title="Options"
+      keywords={[`jQuery`, `Superfish`, `Menu`, `Plugin`, `Options`]}
+    />
 
     <div id="options" className="section  content">
-			<h1>Options</h1>
-			<p>Superfish’s default options:</p>
-			<pre><PrismCode className="language-javascript">{
-`$.fn.superfish.defaults = {
+      <h1>Options</h1>
+      <p>Superfish’s default options:</p>
+      <pre>
+        <PrismCode className="language-javascript">{`$.fn.superfish.defaults = {
   popUpSelector: 'ul,.sf-mega',      // selector within menu context to define the submenu element to be revealed
   hoverClass:    'sfHover',          // the class applied to hovered list items
   pathClass:     'overideThisToUse', // the class you have applied to list items that lead to the current page
@@ -33,11 +36,14 @@ const IndexPage = () => (
   onIdle:        $.noop,             // callback function fires when the 'current' submenu is restored (if using pathClass functionality)
   onDestroy:     $.noop              // callback function fires after the 'destroy' method is called on the menu container
   onHandleTouch: $.noop              // callback function. Use this to handle touch events if the default behaviour is getting in your way
-};`
-      }</PrismCode></pre>
-			<p>You can override any of these options by passing an object into the Superfish method upon initialisation. For example:</p>
-			<pre><PrismCode className="language-markup">{
-`//link to the CSS files for this menu type
+};`}</PrismCode>
+      </pre>
+      <p>
+        You can override any of these options by passing an object into the
+        Superfish method upon initialisation. For example:
+      </p>
+      <pre>
+        <PrismCode className="language-markup">{`//link to the CSS files for this menu type
 <link rel="stylesheet" media="screen" href="superfish.css">
 
 // link to the JavaScript files (hoverIntent is optional)
@@ -54,11 +60,10 @@ const IndexPage = () => (
 			autoArrows:  false                            // disable generation of arrow mark-up
 		});
 	});
-</script>`
-    }</PrismCode></pre>
-    <GeneralSupport />
+</script>`}</PrismCode>
+      </pre>
+      <GeneralSupport />
     </div>
-
   </Layout>
 )
 

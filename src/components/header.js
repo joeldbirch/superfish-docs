@@ -1,21 +1,20 @@
-import React from "react"
-import { Link } from "gatsby"
-import TheMenu from "./the-menu"
-import { FaSuperpowers } from "react-icons/fa"
+import React from 'react'
+import { Link } from 'gatsby'
+import TheMenu from './the-menu'
+import { FaSuperpowers } from 'react-icons/fa'
 import classNames from 'classnames'
 
 class Header extends React.Component {
-
   constructor(props) {
     super(props)
-    this.state = {isMenuOpen: false}
+    this.state = { isMenuOpen: false }
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
-    this.setState(state => ({
+    this.setState((state) => ({
       isMenuOpen: !state.isMenuOpen,
     }))
   }
@@ -33,31 +32,71 @@ class Header extends React.Component {
             <div className="nav-left">
               <h1 className="nav-item">
                 <Link className="sitelogo" to="/" activeClassName="is-active">
-                  <span className="icon" style={{
-                    verticalAlign: 'middle',
-                    marginRight: '.2em',
-                    fontSize: '23px',
-                  }} ><FaSuperpowers /></span><strong>Superfish</strong>
+                  <span
+                    className="icon"
+                    style={{
+                      verticalAlign: 'middle',
+                      marginRight: '.2em',
+                      fontSize: '23px',
+                    }}
+                  >
+                    <FaSuperpowers />
+                  </span>
+                  <strong>Superfish</strong>
                 </Link>
               </h1>
             </div>
-            <span id="NavToggle" className="nav-toggle" onClick={this.handleClick} aria-label="Toggle Menu">
+            <button
+              type="button"
+              id="NavToggle"
+              className="nav-toggle"
+              onClick={this.handleClick}
+              aria-label="Toggle Menu"
+              style={{
+                backgroundColor: '#256ada',
+                border: 'none',
+              }}
+            >
               <span></span>
               <span></span>
               <span></span>
-            </span>
-            <div id="NavItems" className={menuClass} onClick={this.handleClick}>
-
+            </button>
+            <button
+              style={{
+                backgroundColor: '#256ada',
+                border: 'none',
+              }}
+              type="button"
+              id="NavItems"
+              className={menuClass}
+              onClick={this.handleClick}
+              aria-label="Undo toggle Menu"
+            >
               <TheMenu />
 
               <span className="nav-item  nav-item--paypal">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" className="paypalbutton">
+                <form
+                  action="https://www.paypal.com/cgi-bin/webscr"
+                  method="post"
+                  className="paypalbutton"
+                >
                   <input type="hidden" name="cmd" value="_s-xclick" />
-                  <input type="hidden" name="hosted_button_id" value="2006952" />
-                  <input title="Support Superfish development!" type="image" src="https://www.paypal.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Donate" />
+                  <input
+                    type="hidden"
+                    name="hosted_button_id"
+                    value="2006952"
+                  />
+                  <input
+                    title="Support Superfish development!"
+                    type="image"
+                    src="https://www.paypal.com/en_AU/i/btn/btn_donate_LG.gif"
+                    border="0"
+                    name="submit"
+                    alt="Donate"
+                  />
                 </form>
               </span>
-            </div>
+            </button>
           </div>
         </nav>
       </div>

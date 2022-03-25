@@ -6,9 +6,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-1058715-20",
+        trackingId: 'UA-1058715-20',
         // Puts tracking script in the head instead of the body
         head: true,
         // Setting this parameter is optional
@@ -17,20 +17,9 @@ module.exports = {
         respectDNT: true,
       },
     },
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`400`, `600`, `700`]
-          },
-        ],
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: `superfish`,
         short_name: `Superfish`,
@@ -41,8 +30,6 @@ module.exports = {
         icon: `src/images/superfish-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-purgecss`,
@@ -51,12 +38,9 @@ module.exports = {
         // develop: true, // Enable while using `gatsby develop`
         // tailwind: true, // Enable tailwindcss support
         // whitelist: ['whitelist'], // Don't remove this selector
-        ignore: [
-          'superfish/src/css/',
-          'prismjs/themes/prism-coy.css',
-        ], // Ignore files/folders
+        ignore: ['superfish/src/css/', 'prismjs/themes/prism-coy.css'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-      }
+      },
     },
   ],
 }
